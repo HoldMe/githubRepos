@@ -1,0 +1,160 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>boot.eden</groupId>
+  <artifactId>SpringBootDemo</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>SpringBootDemo</name>
+  
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.0.1.RELEASE</version>
+  </parent>
+  
+  <dependencies>
+  	<!-- =================================================   spring cloud  =========================================== -->
+  	<!--eureka server -->
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-eureka</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-eureka-server</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-config</artifactId>
+    </dependency>
+  	<!-- =================================================spring boot================================================= -->
+  	<!-- web -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <!-- jdbc -->
+    <dependency>  
+        <groupId>org.springframework.boot</groupId>  
+        <artifactId>spring-boot-starter-jdbc</artifactId>  
+    </dependency>  
+    
+	<!-- init -->
+	<dependency>  
+        <groupId>org.springframework.boot</groupId>  
+        <artifactId>spring-boot-starter-test</artifactId>  
+        <scope>test</scope>  
+    </dependency>  
+    <dependency>  
+        <groupId>org.springframework.boot</groupId>  
+        <artifactId>spring-boot-test</artifactId>  
+    </dependency>  
+    <!-- html表达式 -->
+    <dependency>  
+	    <groupId>org.springframework.boot</groupId>  
+	    <artifactId>spring-boot-starter-thymeleaf</artifactId>  
+	</dependency> 
+	
+	<!--spring web Service-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web-services</artifactId>
+      <version>1.5.2.RELEASE</version>
+    </dependency>
+    <!-- jpa依赖 -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+
+	<!-- =================================================third part================================================= -->
+    <!--spring web service wsdl-->
+    <dependency>
+      <groupId>wsdl4j</groupId>
+      <artifactId>wsdl4j</artifactId>
+      <version>1.6.3</version>
+    </dependency>
+	
+    <dependency>  
+        <groupId>junit</groupId>  
+        <artifactId>junit</artifactId>  
+        <version>3.8.2</version>  
+        <scope>test</scope>  
+    </dependency>  
+    
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+    </dependency>
+    
+    <dependency>
+	    <groupId>com.oracle</groupId>
+	    <artifactId>ojdbc6</artifactId>
+	    <version>11.2.0.2.0</version>
+	</dependency>
+    <!-- netty -->
+    <dependency>
+	    <groupId>io.netty</groupId>
+	    <artifactId>netty-all</artifactId>
+    	<version>5.0.0.Alpha2</version>
+	</dependency>
+	<!-- webSocket所需依赖 -->
+    <dependency>
+        <groupId>javax</groupId>
+        <artifactId>javaee-api</artifactId>
+        <version>7.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.glassfish.tyrus</groupId>
+        <artifactId>tyrus-container-grizzly-client</artifactId>
+        <version>1.8.3</version>
+  	</dependency>
+  	
+  	<!-- oauth -->
+	<dependency>  
+	      <groupId>org.apache.oltu.oauth2</groupId>  
+	      <artifactId>org.apache.oltu.oauth2.authzserver</artifactId>  
+	      <version>0.31</version>  
+	</dependency>  
+	<dependency>  
+	      <groupId>org.apache.oltu.oauth2</groupId>  
+	      <artifactId>org.apache.oltu.oauth2.resourceserver</artifactId>  
+	      <version>0.31</version>  
+	</dependency> 
+  	
+  </dependencies>
+  
+  
+  <dependencyManagement>
+       <dependencies>
+           <dependency>
+               <groupId>org.springframework.cloud</groupId>
+               <artifactId>spring-cloud-dependencies</artifactId>
+               <version>Dalston.RC1</version>
+               <type>pom</type>
+               <scope>import</scope>
+           </dependency>
+       </dependencies>
+   </dependencyManagement>
+
+   <build>
+       <plugins>
+           <plugin>
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot-maven-plugin</artifactId>
+           </plugin>
+       </plugins>
+   </build>
+
+   <repositories>
+       <repository>
+           <id>spring-milestones</id>
+           <name>Spring Milestones</name>
+           <url>https://repo.spring.io/milestone</url>
+           <snapshots>
+               <enabled>false</enabled>
+           </snapshots>
+       </repository>
+   </repositories>
+</project>

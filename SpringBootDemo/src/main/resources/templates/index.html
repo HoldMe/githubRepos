@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8">
+<title>index</title>
+<style type="text/css">
+	h3{
+		text-align:right;
+		margin-right:25px;
+	}
+	table{
+		border: 1px solid gray;
+	}
+	table tr{
+		line-height: 30px;
+	}
+	table tr td{
+		border-left: 1px solid gray;
+		width:300px;
+		align:center;
+	}
+</style>
+</head>
+<body>
+	<h3>welcome <span th:text="${user.username}"></span></h3>
+	<h4>电影排行列表</h4>
+	<table th:each="m : ${mv}">
+		<tr>
+			<td th:text="${m.TITLE}"></td>
+			<td th:text="${m.VIDEO_NAME}"></td>
+			<td th:text="${m.ACCT_NAME}"></td>
+			<td th:text="${m.COVER_NANE}"></td>
+			<td th:text="${m.CUSCODE}"></td>
+		</tr>
+	</table><br><br>
+	
+	<h4>导演排行列表</h4>
+	<table th:each="u : ${users}">
+		<tr>
+			<td th:text="${u.id}"></td>
+			<td th:text="${u.userName}"></td>
+			<td th:text="${u.sex}"></td>
+			<td th:text="${u.phoneNum}"></td>
+			<td th:text="${u.deptNo}"></td>
+			<td th:text="${u.roleNo}"></td>
+		</tr>
+	</table>
+</body>
+</html>
